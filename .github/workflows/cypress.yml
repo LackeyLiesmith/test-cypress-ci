@@ -19,7 +19,7 @@ jobs:
           path: "test-cypress-ci"
       - name: Run Docker Compose
         run: |
-          cd awesome-localstack
+          cd test-cypress-ci
           chmod +x run-docker-compose-ci.sh
           ./run-docker-compose-ci.sh
       - run: npm install
@@ -43,7 +43,7 @@ jobs:
           path: "test-cypress-ci"
       - name: Run Docker Compose
         run: |
-          cd awesome-localstack
+          cd test-cypress-ci
           chmod +x run-docker-compose-ci.sh
           ./run-docker-compose-ci.sh
       - run: npm install
