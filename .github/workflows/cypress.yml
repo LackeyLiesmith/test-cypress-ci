@@ -15,8 +15,8 @@ jobs:
       - name: Checkout external repository
         uses: actions/checkout@v4
         with:
-          repository: "LackeyLiesmith/test-cypress-ci"
-          path: "test-cypress-ci"
+          repository: "slawekradzyminski/awesome-localstack"
+          path: "awesome-localstack"
       - name: Run Docker Compose
         run: |
           cd awesome-localstack
@@ -25,3 +25,4 @@ jobs:
       - run: npm install
       - uses: browser-actions/setup-chrome@v1
       - name: Run Cypress tests
+        run: npx cypress run --browser chrome
