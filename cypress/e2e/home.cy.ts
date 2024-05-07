@@ -2,9 +2,10 @@
 
 
 import { getRandomUser } from "../generators/userGenerator"
+import { User } from "../types/user";
 
-let token;
-let user;
+let token: string | undefined;
+let user: User;
 
 
 describe('example to-do app', () => {
@@ -20,7 +21,7 @@ describe('example to-do app', () => {
        cy.login(user.username, user.password)
        // pobieramy token z ciasteczka
        cy.getCookie('token').then((cookie) => {
-        token = cookie.value
+        token = cookie?.value
        })
    })
 

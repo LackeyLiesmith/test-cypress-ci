@@ -2,9 +2,11 @@
 
 
 import { getRandomUser } from "../generators/userGenerator"
+import { User } from "../types/user";
 
-let token;
-let user;
+// string lub undefined
+let token: string | undefined;
+let user: User;
 
 
 describe('example to-do app', () => {
@@ -16,7 +18,8 @@ describe('example to-do app', () => {
        cy.login(user.username, user.password)
        // pobieramy token z ciasteczka
        cy.getCookie('token').then((cookie) => {
-        token = cookie.value
+        // ? jeżeli cookie nie jest null to przypisz wartość
+        token = cookie?.value
        })
        // kliknięcie Edit na użytkowniku z testu
        // get szuka na całej stronie, a find na zawężonym kontekście
