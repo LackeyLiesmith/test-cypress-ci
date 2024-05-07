@@ -45,7 +45,7 @@ describe('Login tests in isolation', () => {
         cy.get('[name=password]').type('password')
         cy.get('.btn-primary').click()
 
-        cy.get('.alert-danger1').should('have.text', message)
+        cy.get('.alert-danger').should('have.text', message)
     })
 
 })
